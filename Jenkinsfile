@@ -27,16 +27,5 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            mail to: 'yourcollegeemail@conestogac.on.ca',
-                 subject: '✅ Build Success',
-                 body: 'CI pipeline finished successfully!'
-        }
-        failure {
-            mail to: 'yourcollegeemail@conestogac.on.ca',
-                 subject: '❌ Build Failed',
-                 body: 'Something went wrong in Jenkins pipeline.'
-        }
-    }
+  
 }
