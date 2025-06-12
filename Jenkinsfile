@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Simulating Flask app build...'
+                echo 'Simulating build...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Running dummy test...'
+                echo 'Running test...'
                 bat 'curl --version'
             }
         }
@@ -30,13 +30,13 @@ pipeline {
     post {
         success {
             mail to: 'yourcollegeemail@conestogac.on.ca',
-                 subject: '✅ Jenkins Build Success',
-                 body: 'CI Pipeline completed successfully!'
+                 subject: '✅ Build Success',
+                 body: 'CI pipeline finished successfully!'
         }
         failure {
             mail to: 'yourcollegeemail@conestogac.on.ca',
-                 subject: '❌ Jenkins Build Failed',
-                 body: 'CI Pipeline failed. Please check Jenkins.'
+                 subject: '❌ Build Failed',
+                 body: 'Something went wrong in Jenkins pipeline.'
         }
     }
 }
