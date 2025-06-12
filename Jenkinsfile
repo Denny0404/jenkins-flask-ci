@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
         stage('Build') {
@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running dummy test...'
-                sh 'curl --version'  // Example of test command
+                bat 'curl --version'
             }
         }
     }
