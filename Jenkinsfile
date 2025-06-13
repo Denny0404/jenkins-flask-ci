@@ -29,14 +29,16 @@ pipeline {
 
     post {
         success {
-            mail to: 'dakbari1001@conestogac.on.ca',
-                 subject: '✅ Build Success',
-                 body: 'CI pipeline finished successfully!'
+            echo 'Notification: Build pipeline completed.'
+            // mail to: 'dakbari1001@conestogac.on.ca',
+            //      subject: '✅ Build Success',
+            //      body: 'CI pipeline finished successfully!'
         }
         failure {
-            mail to: 'dakbari1001@conestogac.on.ca',
-                 subject: '❌ Build Failed',
-                 body: 'Something went wrong in Jenkins pipeline.'
+            echo 'Notification: Build pipeline not completed.'
+            // mail to: 'dakbari1001@conestogac.on.ca',
+            //      subject: '❌ Build Failed',
+            //      body: 'Something went wrong in Jenkins pipeline.'
         }
     }
 }
